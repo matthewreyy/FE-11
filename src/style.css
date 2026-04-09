@@ -1,0 +1,498 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.navbar {
+  background: #2c3e50;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar .tombol-tambah {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.navbar .tombol-tambah:hover {
+  background: #c0392b;
+}
+
+.halaman {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+.judul-halaman {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.subjudul {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.filter-kategori {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.filter-kategori button {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+}
+
+.filter-kategori button:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.filter-kategori button.aktif {
+  background: #e74c3c;
+  border-color: #e74c3c;
+  color: white;
+}
+
+.grid-produk {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.kartu {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s;
+}
+
+.kartu:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.kartu .gambar-wrap {
+  height: 180px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.kartu .gambar-wrap img {
+  max-height: 150px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.kartu .isi {
+  padding: 12px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kartu .kategori {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #aaa;
+  letter-spacing: 0.5px;
+}
+
+.kartu .nama {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.kartu .harga {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+.kartu .rating {
+  font-size: 12px;
+  color: #888;
+}
+
+.kartu .rating span {
+  color: #f1c40f;
+}
+
+.kartu .tombol-aksi {
+  padding: 10px 14px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  gap: 8px;
+}
+
+.kartu .tombol-aksi button {
+  flex: 1;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid;
+  font-size: 12px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.tombol-edit {
+  border-color: #3498db !important;
+  color: #3498db !important;
+}
+
+.tombol-edit:hover {
+  background: #3498db !important;
+  color: white !important;
+}
+
+.tombol-hapus {
+  border-color: #e74c3c !important;
+  color: #e74c3c !important;
+}
+
+.tombol-hapus:hover {
+  background: #e74c3c !important;
+  color: white !important;
+}
+
+.loading-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skeleton {
+  height: 300px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  animation: kilat 1.4s infinite;
+}
+
+@keyframes kilat {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.halaman-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.form-header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tombol-batal-header {
+  padding: 8px 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  color: #555;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tombol-batal-header:hover {
+  background: #f5f5f5;
+}
+
+.tombol-simpan-header {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #27ae60;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tombol-simpan-header:hover {
+  background: #219a52;
+}
+
+.tombol-simpan-header:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.judul-form {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.form-produk {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.baris-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 500px) {
+  .baris-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grup-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label-input {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.label-input .wajib {
+  color: #e74c3c;
+}
+
+.form-produk input,
+.form-produk select,
+.form-produk textarea {
+  padding: 9px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+  background: white;
+  color: #333;
+}
+
+.form-produk input:focus,
+.form-produk select:focus,
+.form-produk textarea:focus {
+  border-color: #e74c3c;
+}
+
+.form-produk input.error,
+.form-produk select.error {
+  border-color: #e74c3c;
+}
+
+.pesan-error {
+  font-size: 12px;
+  color: #e74c3c;
+}
+
+.form-produk textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.5;
+}
+
+.aksi-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.tombol-simpan {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #e74c3c;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tombol-simpan:hover {
+  background: #c0392b;
+}
+
+.tombol-batal {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tombol-batal:hover {
+  background: #f5f5f5;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.modal p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.modal .aksi-modal {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal .aksi-modal button {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tombol-konfirmasi-hapus {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.tombol-konfirmasi-hapus:hover {
+  background: #c0392b;
+}
+
+.tombol-konfirmasi-batal {
+  background: white;
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.tombol-konfirmasi-batal:hover {
+  background: #f5f5f5;
+}
+
+.notifikasi {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: white;
+  z-index: 999;
+  animation: masuk 0.3s ease;
+}
+
+.notifikasi.sukses {
+  background: #27ae60;
+}
+.notifikasi.gagal {
+  background: #e74c3c;
+}
+
+@keyframes masuk {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.teks-tengah {
+  text-align: center;
+  padding: 60px 20px;
+  color: #aaa;
+  font-size: 15px;
+}
